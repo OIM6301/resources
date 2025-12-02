@@ -2,7 +2,7 @@
 # print(os.getcwd())
 
 
-# Assume words.txt is under data folder
+# Assume `words.txt` is inside `data` folder
 # f = open('data/words.txt')
 # line = f.readline()
 # print(line)
@@ -23,12 +23,11 @@ def find_long_words():
     """
     prints only the words with more than 20 characters
     """
-    f = open("data/words.txt")  # Assume words.txt is under data folder
-
-    for line in f:
-        word = line.strip()
-        if len(word) > 20:
-            print(word, len(word))
+    with open("data/words.txt") as f:
+        for line in f:
+            word = line.strip()
+            if len(word) > 20:
+                print(word, len(word))
 
 
 # find_long_words()
